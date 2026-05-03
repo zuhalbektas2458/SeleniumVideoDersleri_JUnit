@@ -17,44 +17,39 @@ public class C01_AramaTesti {
 
         //1- Bir test class’i olusturun ilgili ayarlari yapin
 
-
         WebDriver driver=new ChromeDriver();
-
         driver.manage().window().maximize();
-
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
 
 
         //2- https://www.testotomasyonu.com adresine gidin
 
         driver.get("https://www.testotomasyonu.com ");
 
-       Thread.sleep(2000);
 
         //3- urun arama kutusunu locate edin ve kaydedin
 
-        WebElement aramakutusu= driver.findElement(By.id("global-search"));
-
-
+        WebElement aramaKutusu=driver.findElement(By.id("global-search"));
 
 
         //4- arama kutusuna “shoe” yazdirin
 
-        aramakutusu.sendKeys("shoe");
-
-
-
+        aramaKutusu.sendKeys("shoe");
 
 
         //5- arama islemini yapabilmek icin ENTER tusuna basin
+        aramaKutusu.submit();
 
-        aramakutusu.submit();
+        Thread.sleep(2000);
 
 
 
         //6- sayfayi kapatin
 
         driver.quit();
+
+
 
 
 
